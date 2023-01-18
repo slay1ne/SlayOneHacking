@@ -1,34 +1,43 @@
 {
   "name": "@slayone/extension",
-  "version": "0.0.1",
-  "description": "Browser extension for hacking Slay.one, the 2D pixel shooter game.",
-  "main": "build",
-  "scripts": {
-    "setup": "cd scripts && sh setup.sh",
-    "build": "cd scripts && sh build.sh",
-    "reset": "cd scripts && sh reset.sh"
-  },
-  "keywords": [
-    "browser",
-    "extension",
-    "chromium",
-    "firefox",
-    "slayone",
-    "hacking",
-    "hack",
-    "game",
-    "slay",
-    "one",
-    "typescript"
-  ],
+  "displayName": "Slay One Hacking Extension | S1Hx",
+  "version": "0.0.0",
+  "description": "A basic Plasmo extension.",
   "author": {
-    "name": "gemsvido",
+    "name": "gemsvidø",
     "email": "gemsvido@gmail.com"
   },
-  "license": "MPL-2.0",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "plasmo": "0.60.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
   "devDependencies": {
-    "fracturedjsonjs": "^3.0.2",
-    "jsonc": "^2.0.0",
-    "typescript": "^4.9.4"
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.0",
+    "@types/chrome": "0.0.202",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "prettier": "2.7.1",
+    "typescript": "4.9.3"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://*/*"
+    ],
+    "declarative_net_request": {
+      "rule_resources": [
+        {
+          "id": "ruleset_1",
+          "enabled": true,
+          "path": "~rulesets/rules.json"
+        }
+      ]
+    }
   }
 }
